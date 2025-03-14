@@ -93,6 +93,7 @@ proxy-providers:
 
   TWSub:
     filter: 台|TW|(?i)Taiwan
+    exclude-filter: x3
     type: file
     path: ./GLlist.yaml
     health-check:
@@ -102,6 +103,7 @@ proxy-providers:
 
   SGSub:
     filter: 新|狮|獅|SG|(?i)Singapore
+    exclude-filter: x3
     type: file
     path: ./GLlist.yaml
     health-check:
@@ -109,8 +111,9 @@ proxy-providers:
       interval: 600
       url: http://www.gstatic.com/generate_204
 
-  JPSub:
-    filter: 日|JP|(?i)Japan
+  asiaSub:
+    filter: 日|韩|泰|菲|越|JP|(?i)Japan
+    exclude-filter: x3
     type: file
     path: ./GLlist.yaml
     health-check:
@@ -120,6 +123,7 @@ proxy-providers:
 
   USSub:
     filter: 美|US|(?i)States|American
+    exclude-filter: x3
     type: file
     path: ./GLlist.yaml
     health-check:
@@ -128,51 +132,26 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
 proxy-groups:
-  - name: "全球服务"
-    type: url-test
+  - name: "ALL"
+    type: select
     use:
       - Subscribe
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
+    
 
-  - name: "香港服务"
+  - name: "AUTO"
+    type: url-test
+    use:
+    - Subscribe
+    url: http://www.gstatic.com/generate_204
+    interval: 900
+
+
+  - name: "HK"
     type: url-test
     use:
     - HKSub
     url: http://www.gstatic.com/generate_204
     interval: 900
-
-
-  - name: "台湾服务"
-    type: url-test
-    use:
-    - TWSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-
-  - name: "日本服务"
-    type: url-test
-    use:
-    - JPSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-
-  - name: "美国服务"
-    type: url-test
-    use:
-    - USSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-  - name: "新加坡服"
-    type: url-test
-    use:
-    - SGSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
 
 
   - name: "全球加速"
@@ -185,40 +164,22 @@ proxy-groups:
       - 台湾服务
       - 日本服务
 
-  - name: "人工智能"
+  - name: "Fish"
     type: select
     proxies:
-      - 日本服务
-      - 美国服务
-      - 台湾服务
-      - 香港服务
-      - 全球服务
+      - ALL
+      - AUTO
+      - HK
+      - DIRECT
 
-  - name: "中国媒体"
+
+   - name: "MEDIA"
     type: select
     proxies:
-      - 全国直连
-      - 全球服务
-      - 香港服务
-      - 美国服务
-
-
-  - name: "国际媒体"
-    type: select
-    proxies:
-      - 全球服务
-      - 香港服务
-      - 美国服务
-      - 全国直连
-
-  - name: "微软服务"
-    type: select
-    proxies:
-      - 全国直连
-      - 全球服务
-      - 台湾服务
-      - 香港服务
-
+      - ALL
+      - AUTO
+      - HK
+      
 
   - name: 全国直连
     type: select
