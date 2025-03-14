@@ -399,7 +399,6 @@ rules:
   - RULE-SET,Advertising,REJECT
   - RULE-SET,Privacy,REJECT
   - RULE-SET,Reject,拦截服务
-  - RULE-SET,Reject1,拦截服务
   - RULE-SET,RejectU,拦截服务
 
   # > 单分流  - DOMAIN-SUFFIX, - DOMAIN-KEYWORD, ,no-resolve
