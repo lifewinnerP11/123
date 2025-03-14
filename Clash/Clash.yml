@@ -66,9 +66,7 @@ dns:
     geoip: true
     geoip-code: CN
 
-
 proxies: null
-
 
 proxy-providers:
 # 把█████████████换成你的订阅链接
@@ -147,7 +145,6 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 900
 
-
   - name: "TW"
     type: url-test
     use:
@@ -155,14 +152,12 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 900
 
-
   - name: "asia"
     type: url-test
     use:
     - asiaSub
     url: http://www.gstatic.com/generate_204
     interval: 900
-
 
   - name: "us"
     type: url-test
@@ -177,8 +172,6 @@ proxy-groups:
     - SGSub
     url: http://www.gstatic.com/generate_204
     interval: 900
-
-
 
   - name: "NY"
     type: select
@@ -207,28 +200,21 @@ proxy-groups:
       - HK
       - us
 
-
   - name: "国际媒体"
     type: select
     proxies:
       - ALL
       - HK
       - us
-      - 全国直连
+      - DIRECT
 
   - name: "微软服务"
     type: select
     proxies:
-      - 全国直连
+      - DIRECT
       - ALL
       - TW
       - HK
-
-
-  - name: 全国直连
-    type: select
-    proxies:
-      - DIRECT
 
   - name: 拦截服务
     type: select
@@ -376,7 +362,6 @@ rules:
   - RULE-SET,RejectU,拦截服务
 
   # > 小分流 Lan    - RULE-SET,Collection
-  - RULE-SET,Direct,DIRECT
   - RULE-SET,Lan,DIRECT
   - RULE-SET,Unbreak,DIRECT
   - RULE-SET,Microsoft,国际媒体
