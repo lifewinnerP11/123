@@ -198,14 +198,6 @@ proxy-groups:
       - HK
       - NY
 
-  - name: "微软服务"
-    type: select
-    proxies:
-      - DIRECT
-      - NY
-      - TW
-      - HK
-
   - name: "拦截服务"
     type: select
     proxies:
