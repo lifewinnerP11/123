@@ -82,7 +82,8 @@ proxy-providers:
       interval: 1800
       url: http://www.gstatic.com/generate_204
   HKSub:
-    filter: 港|HK|(?i)Hong(?!.*?x3)
+    filter: 港|HK|(?i)Hong
+    exclude-filter: x3
     type: file
     path: ./GLlist.yaml
     health-check:
