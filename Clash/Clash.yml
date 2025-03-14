@@ -133,15 +133,7 @@ proxy-providers:
 
 
 proxy-groups:
-  - name: "AUTO"
-    type: url-test
-    use:
-    - Subscribe
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-
-  - name: "HK"
+   - name: "HK"
     type: url-test
     use:
     - HKSub
@@ -149,21 +141,9 @@ proxy-groups:
     interval: 900
 
 
-  - name: "全球加速"
+   - name: "Fish"
     type: select
     proxies:
-      - 全球服务
-      - 香港服务
-      - 美国服务
-      - 全国直连
-      - 台湾服务
-      - 日本服务
-
-  - name: "Fish"
-    type: select
-    proxies:
-      - ALL
-      - AUTO
       - HK
       - DIRECT
 
@@ -171,8 +151,6 @@ proxy-groups:
    - name: "MEDIA"
     type: select
     proxies:
-      - ALL
-      - AUTO
       - HK
       
 
