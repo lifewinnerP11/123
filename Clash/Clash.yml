@@ -372,7 +372,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/RejectU.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Reject.yaml
+    url: https://raw.githubusercontent.com/lifewinnerP11/111/refs/heads/main/Clash/Rules/Reject.yaml
     interval: 86400    
 
 
