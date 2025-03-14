@@ -7,7 +7,7 @@
 
 
 mixed-port: 7890
-allow-lan: false
+allow-lan: true
 bind-address: '*'
 mode: rule
 log-level: info
@@ -46,13 +46,22 @@ dns:
     - '*.deltaww.com'
     - '*.microsoft.com'
 
-  nameserver: 
+  nameserver:
     - 'https://doh.pub/dns-query'
+    - 'https://dns.alidns.com/dns-query'
+    - 'https://223.5.5.5/dns-query' 
+    - 'https://223.6.6.6/dns-query' 
+    - 'tls://dns.alidns.com' 
+    - 'tls://223.5.5.5:853' 
+    - 'tls://223.6.6.6:853'
+  fallback:
+    - 'https://doh.pub/dns-query'
+    - 'https://dns.alidns.com/dns-query'
     - 'https://223.5.5.5/dns-query'
-  fallback: 
-    - 'https://doh.dns.sb/dns-query'
-    - 'https://1.1.1.1/dns-query'
-    - 'tls://8.8.4.4:853'
+    - 'https://223.6.6.6/dns-query'
+    - 'tls://dns.alidns.com'
+    - 'tls://223.5.5.5:853'
+    - 'tls://223.6.6.6:853'
   fallback-filter: 
     geoip: true
     geoip-code: CN
@@ -65,7 +74,7 @@ proxy-providers:
 # 把█████████████换成你的订阅链接
   Subscribe:
     type: http
-    url: █████████████
+    url: https://submit.xz61.cn:20443/api/v1/client/subscribe?token=ba2b4e427ad7bfde5efa7e53d5879eec
     interval: 86400
     path: ./GLlist.yaml
     health-check:
@@ -73,7 +82,7 @@ proxy-providers:
       interval: 1800
       url: http://www.gstatic.com/generate_204
   HKSub:
-    filter: 港|HK|(?i)Hong
+    filter: 港|HK|(?i)Hong(?!.*?x3)
     type: file
     path: ./GLlist.yaml
     health-check:
