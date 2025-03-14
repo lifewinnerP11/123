@@ -377,6 +377,12 @@ rule-providers:
 
 
 rules:
+  # > 去广告REJECT
+  - RULE-SET,Advertising,REJECT
+  - RULE-SET,Privacy,REJECT
+  - RULE-SET,Reject,拦截服务
+  - RULE-SET,RejectU,拦截服务
+
   # > 小分流 Lan    - RULE-SET,Collection
   - RULE-SET,Direct,DIRECT
   - RULE-SET,Lan,DIRECT
