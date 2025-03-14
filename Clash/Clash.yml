@@ -267,12 +267,6 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/OpenAI.yaml"
     interval: 86400
 
-  Bing:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Bing.yaml
-    url: "https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Bing.yaml"
-    interval: 86400
 
   Google:
     type: http
@@ -370,42 +364,43 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/Reject.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Reject.yaml
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/refs/heads/release/reject.txt
     interval: 86400
 
 
+  RejectU:
+    type: http
+    behavior: classical
+    path: ./RuleSet/RejectU.yaml
+    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Reject.yaml
+    interval: 86400    
+
+
 rules:
-  # > 应用分流
-  - PROCESS-NAME,lync.exe,DIRECT
-  - PROCESS-NAME,EXCEL.EXE,DIRECT
-  - PROCESS-NAME,WINWORD.EXE,DIRECT
-  - PROCESS-NAME,DIAInstaller.EXE,DIRECT
-  - PROCESS-NAME,Update.exe,DIRECT
-  - PROCESS-NAME,Microsoft Teams,DIRECT
-  
   # > 小分流 Lan    - RULE-SET,Collection
   - RULE-SET,Direct,DIRECT
   - RULE-SET,Lan,DIRECT
   - RULE-SET,Unbreak,DIRECT
-  - RULE-SET,Microsoft,微软服务
+  - RULE-SET,Microsoft,国际媒体
   - RULE-SET,Video,中国媒体
-  - RULE-SET,Telegram,HK
-  - RULE-SET,Github,HK
+  - RULE-SET,Telegram,NY
+  - RULE-SET,Github,NY
   - RULE-SET,OpenAI,人工智能
-  - RULE-SET,Bing,微软服务
   - RULE-SET,Discord,NY
   - RULE-SET,HKlist,HK
 
   # > 大分流
   - RULE-SET,China,DIRECT
   - RULE-SET,Global,NY
-  - RULE-SET,Google,NY
+  - RULE-SET,Google,国际媒体
   - RULE-SET,Streaming,国际媒体
 
   # > 去广告REJECT
   - RULE-SET,Advertising,REJECT
   - RULE-SET,Privacy,REJECT
   - RULE-SET,Reject,拦截服务
+  - RULE-SET,Reject1,拦截服务
+  - RULE-SET,RejectU,拦截服务
 
   # > 单分流  - DOMAIN-SUFFIX, - DOMAIN-KEYWORD, ,no-resolve
   - GEOIP,CN,DIRECT
