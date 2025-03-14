@@ -134,11 +134,6 @@ proxy-providers:
 
 proxy-groups:
   - name: "ALL"
-    type: select
-    proxies:
-      - Subscribe
-      
-  - name: "全球服务"
     type: url-test
     use:
       - Subscribe
@@ -188,7 +183,7 @@ proxy-groups:
   - name: "全球加速"
     type: select
     proxies:
-      - 全球服务
+      - ALL
       - 香港服务
       - 美国服务
       - 全国直连
@@ -202,13 +197,13 @@ proxy-groups:
       - 美国服务
       - 台湾服务
       - 香港服务
-      - 全球服务
+      - ALL
 
   - name: "中国媒体"
     type: select
     proxies:
       - 全国直连
-      - 全球服务
+      - ALL
       - 香港服务
       - 美国服务
 
@@ -216,7 +211,7 @@ proxy-groups:
   - name: "国际媒体"
     type: select
     proxies:
-      - 全球服务
+      - ALL
       - 香港服务
       - 美国服务
       - 全国直连
@@ -225,7 +220,7 @@ proxy-groups:
     type: select
     proxies:
       - 全国直连
-      - 全球服务
+      - ALL
       - 台湾服务
       - 香港服务
 
