@@ -238,7 +238,6 @@ proxy-groups:
 
 rule-providers:
 
-
   Lan:
     type: http
     behavior: classical
