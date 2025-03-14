@@ -135,8 +135,11 @@ proxy-groups:
   - name: "ALL"
     type: select
     proxies:
-      - Subscribe
-    
+      - HKSub
+      - TWSub
+      - SGSub
+      - asiaSub
+        
 
   - name: "AUTO"
     type: url-test
