@@ -2,6 +2,8 @@
 
 payload:
 
+
+ - DOMAIN,sina.cn
 IP-CIDR,34.215.155.61/32
 IP-CIDR,35.194.26.233/32
 IP-CIDR,35.239.57.233/32
