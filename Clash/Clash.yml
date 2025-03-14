@@ -140,7 +140,7 @@ proxy-groups:
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
 
-  - name: "香港服务"
+  - name: "HK"
     type: url-test
     use:
     - HKSub
@@ -148,7 +148,7 @@ proxy-groups:
     interval: 900
 
 
-  - name: "台湾服务"
+  - name: "TW"
     type: url-test
     use:
     - TWSub
@@ -156,7 +156,7 @@ proxy-groups:
     interval: 900
 
 
-  - name: "日本服务"
+  - name: "asia"
     type: url-test
     use:
     - asiaSub
@@ -164,14 +164,14 @@ proxy-groups:
     interval: 900
 
 
-  - name: "美国服务"
+  - name: "us"
     type: url-test
     use:
     - USSub
     url: http://www.gstatic.com/generate_204
     interval: 900
 
-  - name: "新加坡服"
+  - name: "sg"
     type: url-test
     use:
     - SGSub
@@ -184,19 +184,19 @@ proxy-groups:
     type: select
     proxies:
       - ALL
-      - 香港服务
-      - 美国服务
+      - HK
+      - us
       - 全国直连
-      - 台湾服务
-      - 日本服务
+      - TW
+      - asia
 
   - name: "人工智能"
     type: select
     proxies:
-      - 日本服务
-      - 美国服务
-      - 台湾服务
-      - 香港服务
+      - asia
+      - us
+      - TW
+      - HK
       - ALL
 
   - name: "中国媒体"
@@ -204,16 +204,16 @@ proxy-groups:
     proxies:
       - 全国直连
       - ALL
-      - 香港服务
-      - 美国服务
+      - HK
+      - us
 
 
   - name: "国际媒体"
     type: select
     proxies:
       - ALL
-      - 香港服务
-      - 美国服务
+      - HK
+      - us
       - 全国直连
 
   - name: "微软服务"
@@ -221,8 +221,8 @@ proxy-groups:
     proxies:
       - 全国直连
       - ALL
-      - 台湾服务
-      - 香港服务
+      - TW
+      - HK
 
 
   - name: 全国直连
@@ -389,12 +389,12 @@ rules:
   - RULE-SET,Unbreak,DIRECT
   - RULE-SET,Microsoft,微软服务
   - RULE-SET,Video,中国媒体
-  - RULE-SET,Telegram,香港服务
-  - RULE-SET,Github,香港服务
+  - RULE-SET,Telegram,HK
+  - RULE-SET,Github,HK
   - RULE-SET,OpenAI,人工智能
   - RULE-SET,Bing,微软服务
   - RULE-SET,Discord,全球加速
-  - RULE-SET,HKlist,香港服务
+  - RULE-SET,HKlist,HK
 
   # > 大分流
   - RULE-SET,China,DIRECT
