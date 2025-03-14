@@ -134,7 +134,7 @@ proxy-providers:
 proxy-groups:
   - name: "ALL"
     type: select
-    use:
+    proxies:
       - Subscribe
     
 
