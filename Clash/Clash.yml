@@ -327,6 +327,12 @@ rule-providers:
     url: "https://raw.githubusercontent.com/lifewinnerP11/111/refs/heads/main/Clash/Rules/Reject.yaml"
     interval: 86400    
 
+  DirectU:
+    type: http
+    behavior: classical
+    path: ./RuleSet/DirectU.yaml
+    url: "https://raw.githubusercontent.com/lifewinnerP11/111/refs/heads/main/Clash/Rules/Direct.yaml"
+    interval: 86400
 
 rules:
   # > 小分流 Lan    - RULE-SET,Collection
@@ -341,6 +347,7 @@ rules:
 
   # > 大分流
   - RULE-SET,China,DIRECT
+  - RULE-SET,DirectU,DIRECT
   - RULE-SET,Global,NY
   - RULE-SET,Google,国际媒体
   - RULE-SET,Streaming,国际媒体
