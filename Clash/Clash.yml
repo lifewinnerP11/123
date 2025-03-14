@@ -179,9 +179,9 @@ proxy-groups:
       - ALL
       - HK
       - us
-      - 全国直连
       - TW
       - asia
+      - DIRECT
 
   - name: "人工智能"
     type: select
@@ -195,7 +195,7 @@ proxy-groups:
   - name: "中国媒体"
     type: select
     proxies:
-      - 全国直连
+      - DIRECT
       - ALL
       - HK
       - us
