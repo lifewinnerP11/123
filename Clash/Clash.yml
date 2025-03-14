@@ -186,28 +186,15 @@ proxy-groups:
   - name: "人工智能"
     type: select
     proxies:
-      - asia
+      - sg
       - us
       - TW
-      - HK
-      - ALL
-      
-
-  - name: "中国媒体"
-    type: select
-    proxies:
-      - DIRECT
-      - ALL
-      - HK
-      - us
 
   - name: "国际媒体"
     type: select
     proxies:
-      - ALL
+      - asia
       - HK
-      - us
-      - DIRECT
 
   - name: "微软服务"
     type: select
@@ -217,7 +204,7 @@ proxy-groups:
       - TW
       - HK
 
-  - name: 拦截服务
+  - name: "拦截服务"
     type: select
     proxies:
       - REJECT
@@ -229,14 +216,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/Lan.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Lan/Lan.yaml
-    interval: 86400
-
-  Unbreak:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Unbreak.yaml
-    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Unbreak.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Lan/Lan.yaml"
     interval: 86400
 
   OpenAI:
@@ -272,78 +252,77 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/Video.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Video.yaml
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml"
     interval: 86400
 
   Telegram:
     type: http
     behavior: classical
     path: ./RuleSet/Extra/Telegram/Telegram.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@release/rule/Clash/Telegram/Telegram.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@release/rule/Clash/Telegram/Telegram.yaml"
     interval: 86400
 
   Streaming:
     type: http
     behavior: classical
     path: ./RuleSet/StreamingMedia/Streaming.yaml
-    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/Streaming.yaml
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml"
     interval: 86400
 
   Discord:
     type: http
     behavior: classical
     path: ./RuleSet/Discord.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Discord.yaml
+    url: "https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Discord.yaml"
     interval: 86400
 
   Global:
     type: http
     behavior: classical
     path: ./RuleSet/Global.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Global.yaml
+    url: "https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/Global.yaml"
     interval: 86400
 
   China:
     type: http
     behavior: classical
     path: ./RuleSet/China.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@release/rule/Clash/China/China.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@release/rule/Clash/China/China.yaml"
     interval: 86400
 
   ChinaIP:
     type: http
     behavior: ipcidr
     path: ./RuleSet/Extra/ChinaIP.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@release/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@release/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml"
     interval: 86400
 
   Advertising:
     type: http
     behavior: classical
     path: ./RuleSet/Guard/Advertising.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml"
     interval: 86400
-
 
   Privacy:
     type: http
     behavior: classical
     path: ./RuleSet/Guard/Privacy.yaml
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Hijacking/Hijacking.yaml"
     interval: 86400
 
   HKlist:
     type: http
     behavior: classical
     path: ./RuleSet/HKlist.yaml
-    url: https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/HKlist.yaml
+    url: "https://cdn.jsdelivr.net/gh/Moli-X/Resources@main/Clash/Rules/HKlist.yaml"
     interval: 86400
 
   Reject:
     type: http
     behavior: classical
     path: ./RuleSet/Reject.yaml
-    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/refs/heads/release/reject.txt
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising_Classical.yaml"
     interval: 86400
 
 
@@ -351,27 +330,20 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/RejectU.yaml
-    url: https://raw.githubusercontent.com/lifewinnerP11/111/refs/heads/main/Clash/Rules/Reject.yaml
+    url: "https://raw.githubusercontent.com/lifewinnerP11/111/refs/heads/main/Clash/Rules/Reject.yaml"
     interval: 86400    
 
 
 rules:
-  # > 去广告REJECT
-  - RULE-SET,Advertising,REJECT
-  - RULE-SET,Privacy,REJECT
-  - RULE-SET,Reject,拦截服务
-  - RULE-SET,RejectU,拦截服务
-
   # > 小分流 Lan    - RULE-SET,Collection
   - RULE-SET,Lan,DIRECT
-  - RULE-SET,Unbreak,DIRECT
-  - RULE-SET,Microsoft,国际媒体
-  - RULE-SET,Video,中国媒体
-  - RULE-SET,Telegram,NY
-  - RULE-SET,Github,NY
+  - RULE-SET,Microsoft,DIRECT
+  - RULE-SET,Video,DIRECT
+  - RULE-SET,Telegram,国际媒体
+  - RULE-SET,Github,国际媒体
   - RULE-SET,OpenAI,人工智能
-  - RULE-SET,Discord,NY
-  - RULE-SET,HKlist,HK
+  - RULE-SET,Discord,国际媒体
+  - RULE-SET,HKlist,国际媒体
 
   # > 大分流
   - RULE-SET,China,DIRECT
