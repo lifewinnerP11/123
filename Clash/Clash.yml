@@ -180,7 +180,7 @@ proxy-groups:
 
 
 
-  - name: "全球加速"
+  - name: "NY"
     type: select
     proxies:
       - ALL
@@ -393,13 +393,13 @@ rules:
   - RULE-SET,Github,HK
   - RULE-SET,OpenAI,人工智能
   - RULE-SET,Bing,微软服务
-  - RULE-SET,Discord,全球加速
+  - RULE-SET,Discord,NY
   - RULE-SET,HKlist,HK
 
   # > 大分流
   - RULE-SET,China,DIRECT
-  - RULE-SET,Global,全球加速
-  - RULE-SET,Google,全球加速
+  - RULE-SET,Global,NY
+  - RULE-SET,Google,NY
   - RULE-SET,Streaming,国际媒体
 
   # > 去广告REJECT
@@ -409,5 +409,5 @@ rules:
 
   # > 单分流  - DOMAIN-SUFFIX, - DOMAIN-KEYWORD, ,no-resolve
   - GEOIP,CN,DIRECT
-  - MATCH,全球加速
+  - MATCH,NY
 
