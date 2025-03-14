@@ -189,18 +189,20 @@ proxy-groups:
       - sg
       - us
       - TW
+      - NY
 
   - name: "国际媒体"
     type: select
     proxies:
       - asia
       - HK
+      - NY
 
   - name: "微软服务"
     type: select
     proxies:
       - DIRECT
-      - ALL
+      - NY
       - TW
       - HK
 
