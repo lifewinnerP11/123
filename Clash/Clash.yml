@@ -131,9 +131,15 @@ proxy-providers:
       interval: 600
       url: http://www.gstatic.com/generate_204
 
-
 proxy-groups:
-   - name: "HK"
+  - name: "全球服务"
+    type: url-test
+    use:
+      - Subscribe
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+
+  - name: "香港服务"
     type: url-test
     use:
     - HKSub
@@ -141,23 +147,22 @@ proxy-groups:
     interval: 900
 
 
-   - name: "Fish"
-    type: select
-    proxies:
-      - HK
-      - DIRECT
+  - name: "台湾服务"
+    type: url-test
+    use:
+    - TWSub
+    url: http://www.gstatic.com/generate_204
+    interval: 900
 
 
-   - name: "MEDIA"
-    type: select
-    proxies:
-      - HK
-      
+  - name: "日本服务"
+    type: url-test
+    use:
+    - JPSub
+    url: http://www.gstatic.com/generate_204
+    interval: 900
 
-  - name: 全国直连
-    type: select
-    proxies:
-      - DIRECT
+
 
   - name: 拦截服务
     type: select
