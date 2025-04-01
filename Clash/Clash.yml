@@ -81,7 +81,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       
   HKSub:
-    filter: 港|HK|(?i)Hong
+    filter: 香港|HK|(?i)Hong
     exclude-filter: x3
     type: file
     path: ./GLlist.yaml
@@ -91,7 +91,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
   TWSub:
-    filter: 台|TW|(?i)Taiwan
+    filter: 台湾|TW|(?i)Taiwan
     exclude-filter: x3
     type: file
     path: ./GLlist.yaml
@@ -101,7 +101,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
   SGSub:
-    filter: 新|狮|獅|SG|(?i)Singapore
+    filter: 新加坡|狮|SG|(?i)Singapore
     exclude-filter: x3
     type: file
     path: ./GLlist.yaml
@@ -111,7 +111,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
   asiaSub:
-    filter: 日|韩|泰|菲|越|JP|(?i)Japan
+    filter: 日本|韩国|泰国|菲|越南|印度|(?i)Japan
     exclude-filter: x3
     type: file
     path: ./GLlist.yaml
@@ -121,7 +121,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
   USSub:
-    filter: 美|US|(?i)States|American
+    filter: 美国|US|(?i)States|American
     exclude-filter: x3
     type: file
     path: ./GLlist.yaml
@@ -147,27 +147,19 @@ proxy-groups:
     type: url-test
     use:
     - TWSub
+    - SGSub
     url: http://www.gstatic.com/generate_204
     interval: 900
 
   - name: "asia"
-    type: url-test
+    type: select
     use:
     - asiaSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
 
   - name: "us"
     type: url-test
     use:
     - USSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-  - name: "sg"
-    type: url-test
-    use:
-    - SGSub
     url: http://www.gstatic.com/generate_204
     interval: 900
 
@@ -193,7 +185,7 @@ proxy-groups:
     type: select
     proxies:
       - asia
-      - HK
+      - TW
       - NY
 
   - name: "拦截服务"
