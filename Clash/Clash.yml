@@ -139,12 +139,10 @@ proxy-groups:
     interval: 300
 
   - name: "HK"
-    type: url-test
+    type: select
     use:
     - HKSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
+    
   - name: "TW"
     type: url-test
     use:
