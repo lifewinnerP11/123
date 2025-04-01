@@ -144,12 +144,10 @@ proxy-groups:
     - HKSub
     
   - name: "TW"
-    type: url-test
+    type: select
     use:
     - TWSub
     - SGSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
 
   - name: "asia"
     type: select
