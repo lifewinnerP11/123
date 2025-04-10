@@ -65,7 +65,9 @@ payload:
  - IP-CIDR,139.199.240.84/32
  - IP-CIDR,112.53.55.225/32
  - DOMAIN-SUFFIX,gw.alicdn.com
-
+ - DOMAIN-SUFFIX,delipu.cc
+ - DOMAIN-SUFFIX,amdc.m.taobao.com
+ 
  ##### https://bi-girl.net/
  - DOMAIN-SUFFIX,ad-nex.com,reject
  - DOMAIN-SUFFIX,waqool.com,reject
