@@ -120,9 +120,18 @@ proxy-providers:
       interval: 600
       url: http://www.gstatic.com/generate_204
 
-  USSub:
-    filter: 美国|US|(?i)States|American
+  TJSub:
+    filter: TJ
     exclude-filter: x3
+    type: file
+    path: ./GLlist.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+      
+  3Sub:
+    filter: 香港|HK|台湾|TW|新加坡|狮|SG
     type: file
     path: ./GLlist.yaml
     health-check:
@@ -138,51 +147,49 @@ proxy-groups:
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
 
-  - name: "HK"
+  - name: "GTS"
     type: select
     use:
     - HKSub
-    
-  - name: "TW"
-    type: select
-    use:
     - TWSub
     - SGSub
+    
+  - name: "TJ"
+    type: select
+    use:
+    - TJSub
 
   - name: "asia"
     type: select
     use:
     - asiaSub
 
-  - name: "us"
-    type: url-test
+  - name: "3"
+    type: select
     use:
-    - USSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
+    - 3Sub
 
   - name: "NY"
     type: select
     proxies:
       - ALL
-      - HK
-      - us
-      - TW
+      - GTS
+      - TJ
+      - 3
       - asia
       - DIRECT
 
   - name: "人工智能"
     type: select
     proxies:
-      - us
-      - TW
+      - GTS
       - NY
 
   - name: "国际媒体"
     type: select
     proxies:
       - asia
-      - TW
+      - 3
       - NY
 
   - name: "拦截服务"
