@@ -72,7 +72,7 @@ proxy-providers:
 # 把█████████████换成你的订阅链接
   Subscribe:
     type: http
-    url: https://submit.sdnlv0.cn:20443/api/v1/client/subscribe?token=34ec23a178fad6ab518d13939f78ca9e
+    url: https://submit.sdnlv0.cn:20443/api/v1/client/subscribe?token=34ec23a178fad6ab518
     interval: 86400
     path: ./GLlist.yaml
     health-check:
