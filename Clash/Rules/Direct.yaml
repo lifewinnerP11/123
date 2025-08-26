@@ -15,4 +15,5 @@ payload:
   - DOMAIN-SUFFIX,staticfile.org
   - DOMAIN-SUFFIX,tracking-protection.cdn.mozilla.net
   - DOMAIN-SUFFIX,upaiyun.com
+  - DOMAIN-SUFFIX,18av.mov
   
