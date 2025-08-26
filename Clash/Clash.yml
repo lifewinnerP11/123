@@ -318,21 +318,21 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/RejectU.yaml
-    url: "https://raw.githubusercontent.com/lifewinnerP11/111/refs/heads/main/Clash/Rules/Reject.yaml"
+    url: "https://raw.githubusercontent.com/lifewinnerP11/123/refs/heads/main/Clash/Rules/Reject.yaml"
     interval: 86400    
 
   DirectU:
     type: http
     behavior: classical
     path: ./RuleSet/DirectU.yaml
-    url: "https://raw.githubusercontent.com/lifewinnerP11/111/refs/heads/main/Clash/Rules/Direct.yaml"
+    url: "https://raw.githubusercontent.com/lifewinnerP11/123/refs/heads/main/Clash/Rules/Direct.yaml"
     interval: 86400
 
   GlobalU:
     type: http
     behavior: classical
     path: ./RuleSet/GlobalU.yaml
-    url: "https://raw.githubusercontent.com/lifewinnerP11/111/refs/heads/main/Clash/Rules/GlobalU.yaml"
+    url: "https://raw.githubusercontent.com/lifewinnerP11/123/refs/heads/main/Clash/Rules/GlobalU.yaml"
     interval: 86400
 
 rules:
